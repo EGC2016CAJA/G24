@@ -1,4 +1,6 @@
-<?
+<?php
+
+include 'config.php';
 
 try{
 
@@ -7,11 +9,6 @@ try{
 	$data = json_decode(file_get_contents('php://input'),true);
 	$vote = $data["vote"];
 	$votation_id = intval($data["votation_id"]);
-	
-	$servername = "127.7.219.2";
-	$username = "adminlg4UZhi";
-	$password = "FvNTkqswPP5i";
-	$dbname = "php";
 	
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	
