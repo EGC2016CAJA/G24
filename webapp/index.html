@@ -95,7 +95,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
+                    <h2 class="section-heading">Informaci&oacute;n de la API</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -104,62 +104,98 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                        <h3>Sturdy Templates</h3>
-                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>Ready to Ship</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                        <h3>Manda tu voto</h3>
+                        <p class="text-muted">Con nuestro sistema podr&aacute;s enviar un voto para que se almacene en la base de datos.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Up to Date</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
+                        <h3>Consulta una votaci&oacute;n</h3>
+                        <p class="text-muted">Haz una petici&oacute;n de la lista completa de los votos cifrados de una determinada votaci&oacute;n.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                        <h3>Made with Love</h3>
-                        <p class="text-muted">You have to make your websites with love these days!</p>
                     </div>
                 </div>
             </div>
         </div>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container">
+        <div class="row">
+            <table style="border-collapse:collapse" class="wikitable sortable">
+<tr>
+<th> M&eacute;todo (URL)
+</th>
+<th> Tipo
+</th>
+<th> Descripci&oacute;n
+</th>
+<th> Par&aacute;metros
+</th>
+<th> Respuesta
+</th>
+<th> Ejemplo
+</th></tr>
+<tr>
+<td> vote (<a rel="nofollow" class="external free" href="http://storage-egc1516.rhcloud.com/vote.php">http://storage-egc1516.rhcloud.com/vote.php</a>)
+</td>
+<td> POST
+</td>
+<td> Permite almacenar un voto para una determinada votaci&oacute;n
+</td>
+<td>
+vote: voto codificado 
+<br/>
+votation_id: id de la votaci&oacute;n
+</td>
+<td> Json con un mensaje de respuesta que indica si la operaci&oacute;n se ha resuelto correctamente. (el mensaje ser&aacute; 1 si todo sali&oacute; bien y 0 en caso contrario)
+</td>
+<td> {"msg":1}
+</td></tr>
+<tr>
+<td> get_votes (<a rel="nofollow" class="external free" href="http://storage-egc1516.rhcloud.com/get_votes.php">http://storage-egc1516.rhcloud.com/get_votes.php</a>)
+</td>
+<td> GET
+</td>
+<td> Devuelve la lista de votos de una determinada votaci&oacute;n
+</td>
+<td>
+votation_id: id de la votaci&oacute;n.
+</td>
+<td> Json con la lista de votos y un campo "msg" que indica si la operaci&oacute;n se realiz&oacute; correctamente.
+</td>
+<td> {"votes":["voto1","voto2"],"msg":1}
+</td></tr></table>
+        </div>
+    </div>
+
     </section>
 
     
-
-    <aside class="bg-dark">
-        <div class="container text-center">
-            <div class="call-to-action">
-                <h2>Free Download at Start Bootstrap!</h2>
-                <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
-            </div>
-        </div>
-    </aside>
-
-    <section id="contact">
+    <section class="bg-primary" id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
-                    <hr class="primary">
-                    <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                    <h2 class="section-heading">Contacta con nosotros</h2>
+                    <hr class="light">
+                    <p>Si tienes dudas, no te queda algo claro o tienes alguna propuesta de mejora para la aplicaci&oacute;n no dudes en dec&iacute;rnoslo, somos todo o&iacute;dos.</p>
                 </div>
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                    <p>123-456-6789</p>
+                <div class="col-lg-4 text-center">
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                    <p><a class="cont" href="mailto:your-email@your-domain.com">albrojfer1@alum.us.es</a></p>
+                </div>
+                <div class="col-lg-4 text-center">
                 </div>
             </div>
         </div>
@@ -173,10 +209,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    GitHub
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    &iexcl;Nuestro repositorio!
                                 </div>
                             </div>
                         </div>
@@ -188,10 +224,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    EGC 15-16
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    &iexcl;Visita la wiki de la asignatura!
                                 </div>
                             </div>
                         </div>
@@ -199,59 +235,14 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
+                        <img src="img/portfolio/3.png" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    ETSII
                                 </div>
                                 <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/5.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/6.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
+                                    La Facultad
                                 </div>
                             </div>
                         </div>
