@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<project name="money" default="main">
+ 
+  <fileset dir="./src/" id="srcfiles">
+   <include name="*.*" />
+  	<include name="**/*.*" />
+  </fileset>
+ 
+  <fileset dir="." id="phpfiles">
+    <include name="*.php" />
+    <include name="**/*.php" />
+  </fileset>  
+
+  <target name="main">
+     <phingcall target="test" />
+  </target>
+ 
+  <target name="compile">
+    <phplint>
+      <fileset refid="phpfiles" />
+    </phplint>
+  </target>
+ 
+  <target name="test" depends="compile">
+  	<phpunit printsummary="true" haltonfailure="true" pharlocation="/usr/local/bin/phpunit">
+  		<batchtest>
+  			<fileset dir="./tests">
+  				<include name="*Test.php" />
+  			</fileset>
+  		</batchtest>
+  	</phpunit>
+  </target>
+
+  <target name="build" depends="test">
+  	<copy todir="build">
+  		<fileset refid="srcfiles" />
+  	</copy>
+  </target>
+ 
+</project>
