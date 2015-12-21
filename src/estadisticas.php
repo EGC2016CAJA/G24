@@ -35,11 +35,42 @@
 </head>
 
 <body id="page-top">
-	<section class="bg-primary" id="contact">
+	<section class="bg-primary" id="stadistics">
 		<div class="col-lg-8 col-lg-offset-2 text-center">
 			<h2 class="section-heading">Estadísticas</h2>
+			<hr class="light">
+			<p>Aqu&iacute; podr&aacute; ver el n&uacute;mero de votos totales (Total) almacenados por cada votaci&oacute;n (Votation_id)</p>
 		</div>
+	<hr/>
 	</section>
+	
+	<table class="table table-hover">
+	<tr>
+		<td><b>Votation_id</b></td>
+		<td><b>Total</b></td>
+	</tr>
+	<?php
+		include 'config.php';
+		
+		$link = @mysql_connect($servername, $username,$password) or die ("Error al conectar a la base de datos.");
+  		@mysql_select_db($dbname, $link) or die ("Error al conectar a la base de datos.");
+		
+		
+		$sql = "SELECT votation_id, COUNT(*) FROM Votes GROUP BY votation_id";
+		
+		$result = mysql_query($sql);
+			
+		while($row = mysql_fetch_array($result)){
+			echo "<tr><td>" . $row["votation_id"] . "</td>"; 
+			echo "<td>" . $row["COUNT(*)"] . "</td></tr>"; 
+		}
+		
+		mysql_free_result($result);
+		mysql_close();
+	?>	
+	</table>
+
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
