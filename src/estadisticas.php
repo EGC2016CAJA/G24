@@ -46,8 +46,8 @@
 	
 	<table class="table table-hover">
 	<tr>
-		<td id="titleColumn"><b>Votation_id</b></td>
-		<td id="titleColumn"><b>Total</b></td>
+		<td><b>Votation_id</b></td>
+		<td><b>Total</b></td>
 	</tr>
 	<?php
 		include 'config.php';
