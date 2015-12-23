@@ -4,6 +4,12 @@ include 'services/login.php';
 
 $isLoguedAsAdmin = isLoguedAsAdmin();
 
+/*
+ * $returnUrl sirve para que cuando hagamos un login trabajando en desarrollo, la url a la que debe redirigirnos es http://localhost/egc/src/
+ * Pero cuando estamos con la herramienta ya desplegada, la url a la que debe redirigirnos es http://storage-egc1516.rhcloud.com
+ */
+//$returnUrl= "http://storage-egc1516.rhcloud.com"
+$returnUrl= "http://localhost/egc/src/"
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -56,7 +62,7 @@ $isLoguedAsAdmin = isLoguedAsAdmin();
                 <a class="navbar-brand page-scroll" href="#page-top">Almacenamiento</a>
                 
                 <?php if(!$isLoguedAsAdmin){ ?> 
-                	<a class="navbar-brand page-scroll" href="http://auth-egc.azurewebsites.net/?returnUrl=http://http://storage-egc1516.rhcloud.com">LOGIN</a>
+                	<a class="navbar-brand page-scroll" href="http://auth-egc.azurewebsites.net/?returnUrl=<?php echo $returnUrl ?>">LOGIN</a>
                 <?php } ?>
             </div>
 
@@ -139,7 +145,7 @@ $isLoguedAsAdmin = isLoguedAsAdmin();
                         <i class="fa fa-4x fa-pie-chart wow bounceIn text-primary" data-wow-delay=".1s"></i>
                         <h3>Estadísticas</h3>
                         <p class="text-muted">Necesitar&aacute; hacer login como administrador para poder acceder a las estad&iacute;sticas.</p>
-                        <h3><a style	="background:#F78181" href="http://auth-egc.azurewebsites.net/?returnUrl=http://http://storage-egc1516.rhcloud.com">LOGIN</a></h3>
+                        <h3><a style	="background:#F78181" href="http://auth-egc.azurewebsites.net/?returnUrl=<?php echo $returnUrl ?>">LOGIN</a></h3>
                     </div>
                 </div>
 		<?php } ?>        
