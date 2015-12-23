@@ -1,3 +1,10 @@
+<?php 
+
+include 'services/login.php';
+
+$isLoguedAsAdmin = isLoguedAsAdmin();
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -47,7 +54,10 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Almacenamiento</a>
-                <a class="navbar-brand page-scroll" href="http://auth-egc.azurewebsites.net/?returnUrl=http://http://storage-egc1516.rhcloud.com/">LOGIN</a>
+                
+                <?php if(!$isLoguedAsAdmin){ ?> 
+                	<a class="navbar-brand page-scroll" href="http://auth-egc.azurewebsites.net/?returnUrl=http://http://storage-egc1516.rhcloud.com/">LOGIN</a>
+                <?php } ?>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -112,8 +122,8 @@
                     </div>
                 </div>
                  
-         <!-- Este es el bloque 'ESTADÃSTICAS' que se mostrará cuando se esté logueado como admin-->
-         
+         <!-- Este es el bloque 'ESTADÃSTICAS' que se mostrarï¿½ cuando se estï¿½ logueado como admin-->
+         <?php if($isLoguedAsAdmin){ ?>
                  <div class="col-md-4 text-center">
                     <div class="service-box">
                         <a href="../estadisticas.php"><i class="fa fa-4x fa-pie-chart wow bounceIn text-primary" data-wow-delay=".1s"></i></a>
@@ -121,8 +131,9 @@
                         <p class="text-muted">A trav&eacute;s de <a href="../src/estadisticas.php">&eacute;ste</a> enlace podr&aacute; observar las estad&iacute;sticas de votos totales por cada tipo de votaci&oacute;n realizada.</p>
                     </div>
                 </div>
-
- <!-- Este es el bloque 'ESTADÃSTICAS' que se mostrará cuando NO se esté logueado como admin-->
+ 		<!-- Este es el bloque 'ESTADÃSTICAS' que se mostrarï¿½ cuando NO se estï¿½ logueado como admin-->
+ 		<!-- Alberto: Ya hacemos un login en la cabecera de la pÃ¡gina. Veo muy bien indicar que para las estadisticas es necesario hacer un login. Pero luego el enlace de abajo se ve feo aqui en medio de la aplicaciÃ³n. Igual cambiando el css queda mucho mejor. Simplemente evaluarlo -->
+ 		<?php }else{ ?>
                 <div class="col-md-4 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-pie-chart wow bounceIn text-primary" data-wow-delay=".1s"></i>
@@ -131,8 +142,7 @@
                         <h3><a style	="background:#F78181" href="http://auth-egc.azurewebsites.net/?returnUrl=http://http://storage-egc1516.rhcloud.com/">LOGIN</a></h3>
                     </div>
                 </div>
-
-                
+		<?php } ?>        
          <!-- -------------------------------------------------------------------------------- -->
          
                 <div class="col-md-4 text-center">
