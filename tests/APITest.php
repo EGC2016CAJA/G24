@@ -9,7 +9,7 @@ class APITest extends PHPUnit_Framework_TestCase{
 		$string = file_get_contents($url);
 		$data = json_decode($string,true);
 		$votes = $data["votes"];
-		$this->assertEquals(count($votes),2);
+		$this->assertEquals(count($votes),4);
 	}
 	
 	// Vote
