@@ -112,7 +112,7 @@
                     </div>
                 </div>
                  
-         <!-- Este es el bloque 'ESTAD√çSTICAS', el cual no se debe mostrar si se est√° logueado -->
+         <!-- Este es el bloque 'ESTAD√çSTICAS' que se mostrar· cuando se estÈ logueado como admin-->
          
                  <div class="col-md-4 text-center">
                     <div class="service-box">
@@ -121,6 +121,17 @@
                         <p class="text-muted">A trav&eacute;s de <a href="../src/estadisticas.php">&eacute;ste</a> enlace podr&aacute; observar las estad&iacute;sticas de votos totales por cada tipo de votaci&oacute;n realizada.</p>
                     </div>
                 </div>
+
+ <!-- Este es el bloque 'ESTAD√çSTICAS' que se mostrar· cuando NO se estÈ logueado como admin-->
+                <div class="col-md-4 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-pie-chart wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                        <h3>Estad√≠sticas</h3>
+                        <p class="text-muted">Necesitar&aacute; hacer login como administrador para poder acceder a las estad&iacute;sticas.</p>
+                        <h3><a style	="background:#F78181" href="http://auth-egc.azurewebsites.net/?returnUrl=http://http://storage-egc1516.rhcloud.com/">LOGIN</a></h3>
+                    </div>
+                </div>
+
                 
          <!-- -------------------------------------------------------------------------------- -->
          
