@@ -49,6 +49,7 @@
 		<td id="titleColumn"><b>Votation_id</b></td>
 		<td id="titleColumn"><b>Total</b></td>
 	</tr>
+	
 	<?php
 		include 'config.php';
 		
@@ -68,6 +69,7 @@
 		mysql_free_result($result);
 		mysql_close();
 	?>	
+	
 	</table>
 
 

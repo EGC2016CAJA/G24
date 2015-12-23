@@ -47,6 +47,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Almacenamiento</a>
+                <a class="navbar-brand page-scroll" href="http://auth-egc.azurewebsites.net/?returnUrl=http://http://storage-egc1516.rhcloud.com/">LOGIN</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -111,6 +112,8 @@
                     </div>
                 </div>
                  
+         <!-- Este es el bloque 'ESTADÍSTICAS', el cual no se debe mostrar si se está logueado -->
+         
                  <div class="col-md-4 text-center">
                     <div class="service-box">
                         <a href="../estadisticas.php"><i class="fa fa-4x fa-pie-chart wow bounceIn text-primary" data-wow-delay=".1s"></i></a>
@@ -119,6 +122,8 @@
                     </div>
                 </div>
                 
+         <!-- -------------------------------------------------------------------------------- -->
+         
                 <div class="col-md-4 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
