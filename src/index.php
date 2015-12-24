@@ -145,7 +145,7 @@ $returnUrl= "http://localhost/egc/src/"
                         <i class="fa fa-4x fa-pie-chart wow bounceIn text-primary" data-wow-delay=".1s"></i>
                         <h3>Estadísticas</h3>
                         <p class="text-muted">Necesitar&aacute; hacer login como administrador para poder acceder a las estad&iacute;sticas.</p>
-                        <h3><a style	="background:#F78181" href="http://auth-egc.azurewebsites.net/?returnUrl=<?php echo $returnUrl ?>">LOGIN</a></h3>
+                        <h3><a id="loginStyle" href="http://auth-egc.azurewebsites.net/?returnUrl=<?php echo $returnUrl ?>">LOGIN</a></h3>
                     </div>
                 </div>
 		<?php } ?>        
