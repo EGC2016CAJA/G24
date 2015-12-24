@@ -1,41 +1,75 @@
 <?php
 
 /**
- * Funcion que nos indica si el usuario de la sesión actual está logueado como administrador
+ * Funcion que a traves de un token, nos creará una cookie de session si el token es correcto
  */
-function isLoguedAsAdmin($token){
-	$tokenDivido = split(':', $token);
-	$nameUser = $tokenDivido[0];
-	// Construyendo las URLs para corroborar token
-	$url = 'http://auth-egc.azurewebsites.net/api/checkToken?token='.$token;
-	$urlGetUser = 'http://auth-egc.azurewebsites.net/api/getUser?username='.$nameUser;
-	// Cogiendo los datos
-	$string = file_get_contents($url);
-	$stringUser = file_get_contents($urlGetUser);
-	// Decodificando
-	$data = json_decode($string,true);
-	$dataUser = json_decode($stringUser,true);
-	// Cogiendo el atributo concreto que deseo
-	$valido = $data['valid']; // Si valido es 1 es que es true.
-	$isAdmin = $dataUser['Is_admin']; //Si isAdmin es 1 es que es true.
+function loginService($token){
+	try{		
+		if(checkToken($token) && checkAdminUser($token)){
+			setcookie("token", $token, time()+604800, '/'); //cookie 7 dias
+			return true;
+		}else{
+			return false;
+		}
 	
-	if($valido == 1 and $isAdmin == 1){
-		//setcookie("nameUser", $nameUser, time()+604800, '/'); //cookie 7 dias
-		//setcookie("passUser", $passUser, time()+604800, '/'); //cookie 7 dias
-		return true;
-	}else{
+	}catch(Exception $e){
 		return false;
 	}
 }
 
-function isLogued($token){
-	$tokenDivido = split(':', $token);
-	$url = 'http://auth-egc.azurewebsites.net/api/checkToken?token='.$token;
-	$string = file_get_contents($url);
-	$data = json_decode($string,true);
-	$valido = $data['valid'];
-	if($valido == 1){
-		return true;
+//Comprueba que el token es un token correcto
+function checkToken($token){
+	try{
+		// Construyendo las URLs para corroborar token
+		$url = 'http://auth-egc.azurewebsites.net/api/checkToken?token='.$token;
+		// Cogiendo los datos
+		$string = file_get_contents($url);
+		// Decodificando
+		$data = json_decode($string,true);
+		// Cogiendo el atributo concreto que necesitamos
+		$valido = $data['valid'];
+		
+		if($valido == 1){
+			return true;
+		}else{
+			return false;
+		}
+		
+	}catch(Exception $e){
+		return false;
+	}
+}
+
+//Comprueba que el user del token es un administrador
+function checkAdminUser($token){
+	try{
+		$tokenDivido = split(':', $token);
+		$nameUser = $tokenDivido[0];
+		// Construyendo las URLs para comprobar que el usuario es una administrador
+		$urlGetUser = 'http://auth-egc.azurewebsites.net/api/getUser?username='.$nameUser;
+		// Cogiendo los datos
+		$stringUser = file_get_contents($urlGetUser);
+		// Decodificando
+		$dataUser = json_decode($stringUser,true);
+		// Cogiendo el atributo concreto que necesitamos
+		$isAdmin = $dataUser['Is_admin'];
+		if($isAdmin == 1){
+			return true;
+		}else{
+			return false;
+		}
+	}catch(Exception $e){
+		return false;
+	}
+}
+
+//Funcion que mira si el usuario logueado es un administrador. Para ello revisa el token de la cookie
+function isLoguedAsAdmin(){
+	if(isset($_COOKIE['token'])){
+		$token = $_COOKIE['token'];
+		return checkToken($token) && checkAdminUser($token);
+	}else{
+		return false;
 	}
 }
 ?>

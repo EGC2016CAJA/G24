@@ -1,9 +1,18 @@
 <?php 
 
+session_start();
+
 include 'services/login.php';
 
-$isLoguedAsAdmin = isLoguedAsAdmin($_GET['token']);
-$isLogued = isLogued($_GET['token']);
+$isLoguedAsAdmin = false;
+if(isset($_GET['token'])){
+	$isLoguedAsAdmin = loginService($_GET['token']);
+}
+if(!$isLoguedAsAdmin){
+	$isLoguedAsAdmin = isLoguedAsAdmin();
+}
+
+
 /*
  * $returnUrl sirve para que cuando hagamos un login trabajando en desarrollo, la url a la que debe redirigirnos es http://localhost/egc/src/
  * Pero cuando estamos con la herramienta ya desplegada, la url a la que debe redirigirnos es http://storage-egc1516.rhcloud.com
@@ -60,9 +69,9 @@ $returnUrl= "http://localhost/egc/src/"
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Almacenamiento</a>
                 
-                <?php if(!$isLoguedAsAdmin and !$isLogued): ?>
+                <?php if(!$isLoguedAsAdmin): ?>
                 	<a class="navbar-brand page-scroll" href="http://auth-egc.azurewebsites.net/?returnUrl=<?php echo $returnUrl ?>">LOGIN</a>
-                <?php elseif($isLoguedAsAdmin or $isLogued): ?>
+                <?php elseif($isLoguedAsAdmin): ?>
                 	<a class="navbar-brand page-scroll" href="../src/services/logout.php">LOG OUT</a>
                 <?php endif; ?>
             </div>
