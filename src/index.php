@@ -2,8 +2,8 @@
 
 include 'services/login.php';
 
-$isLoguedAsAdmin = isLoguedAsAdmin();
-
+$isLoguedAsAdmin = isLoguedAsAdmin($_GET['token']);
+$isLogued = isLogued($_GET['token']);
 /*
  * $returnUrl sirve para que cuando hagamos un login trabajando en desarrollo, la url a la que debe redirigirnos es http://localhost/egc/src/
  * Pero cuando estamos con la herramienta ya desplegada, la url a la que debe redirigirnos es http://storage-egc1516.rhcloud.com
@@ -48,7 +48,6 @@ $returnUrl= "http://localhost/egc/src/"
 </head>
 
 <body id="page-top">
-
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -61,9 +60,11 @@ $returnUrl= "http://localhost/egc/src/"
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Almacenamiento</a>
                 
-                <?php if(!$isLoguedAsAdmin){ ?> 
+                <?php if(!$isLoguedAsAdmin and !$isLogued): ?>
                 	<a class="navbar-brand page-scroll" href="http://auth-egc.azurewebsites.net/?returnUrl=<?php echo $returnUrl ?>">LOGIN</a>
-                <?php } ?>
+                <?php elseif($isLoguedAsAdmin or $isLogued): ?>
+                	<a class="navbar-brand page-scroll" href="../src/services/logout.php">LOG OUT</a>
+                <?php endif; ?>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -132,7 +133,7 @@ $returnUrl= "http://localhost/egc/src/"
          <?php if($isLoguedAsAdmin){ ?>
                  <div class="col-md-4 text-center">
                     <div class="service-box">
-                        <a href="../estadisticas.php"><i class="fa fa-4x fa-pie-chart wow bounceIn text-primary" data-wow-delay=".1s"></i></a>
+                        <a href="../src/estadisticas.php"><i class="fa fa-4x fa-pie-chart wow bounceIn text-primary" data-wow-delay=".1s"></i></a>
                         <h3>Estadísticas</h3>
                         <p class="text-muted">A trav&eacute;s de <a href="../src/estadisticas.php">&eacute;ste</a> enlace podr&aacute; observar las estad&iacute;sticas de votos totales por cada tipo de votaci&oacute;n realizada.</p>
                     </div>
