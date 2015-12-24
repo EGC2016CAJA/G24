@@ -5,8 +5,13 @@ session_start();
 include 'services/login.php';
 
 $isLoguedAsAdmin = false;
+$isLoguedAsNotAdmin = false;
 if(isset($_GET['token'])){
 	$isLoguedAsAdmin = loginService($_GET['token']);
+	$isLoguedAsNotAdmin = loginServiceAsNotAdmin($_GET['token']);
+}
+if(!$isLoguedAsNotAdmin){
+	$isLoguedAsNotAdmin = isLoguedAsNotAdmin();
 }
 if(!$isLoguedAsAdmin){
 	$isLoguedAsAdmin = isLoguedAsAdmin();
@@ -68,10 +73,9 @@ $returnUrl= "http://localhost/egc/src/"
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Almacenamiento</a>
-                
-                <?php if(!$isLoguedAsAdmin): ?>
+                <?php if(!$isLoguedAsAdmin and !$isLoguedAsNotAdmin): ?>
                 	<a class="navbar-brand page-scroll" href="http://auth-egc.azurewebsites.net/?returnUrl=<?php echo $returnUrl ?>">LOGIN</a>
-                <?php elseif($isLoguedAsAdmin): ?>
+                <?php elseif($isLoguedAsAdmin || $isLoguedAsNotAdmin): ?>
                 	<a class="navbar-brand page-scroll" href="../src/services/logout.php">LOG OUT</a>
                 <?php endif; ?>
             </div>
@@ -155,7 +159,13 @@ $returnUrl= "http://localhost/egc/src/"
                         <i class="fa fa-4x fa-pie-chart wow bounceIn text-primary" data-wow-delay=".1s"></i>
                         <h3>Estadísticas</h3>
                         <p class="text-muted">Necesitar&aacute; hacer login como administrador para poder acceder a las estad&iacute;sticas.</p>
-                        <h3><a id="loginStyle" href="http://auth-egc.azurewebsites.net/?returnUrl=<?php echo $returnUrl ?>">LOGIN</a></h3>
+                        <h3>
+                        	<?php if($isLoguedAsNotAdmin): ?>
+                				<a id="loginStyle" href="../src/services/logout.php">LOG OUT</a>
+             			    <?php else: ?>
+                        		<a id="loginStyle" href="http://auth-egc.azurewebsites.net/?returnUrl=<?php echo $returnUrl ?>">LOGIN</a>
+               				<?php endif; ?>
+                        </h3>
                     </div>
                 </div>
 		<?php } ?>        

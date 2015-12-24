@@ -35,6 +35,16 @@
 </head>
 
 <body id="page-top">
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<div id="styleHeadEstadisticas" >
+			<ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="../src/index.php">ALMACENAMIENTO DE VOTOS</a>
+                    </li>
+                </ul>
+			</div>
+                
+        </div>
 	<section class="bg-primary" id="stadistics">
 		<div class="col-lg-8 col-lg-offset-2 text-center">
 			<h2 class="section-heading">Estadísticas</h2>
