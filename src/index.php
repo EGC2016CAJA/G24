@@ -1,3 +1,30 @@
+<?php 
+
+session_start();
+
+include 'services/login.php';
+
+$isLoguedAsAdmin = false;
+$isLoguedAsNotAdmin = false;
+if(isset($_GET['token'])){
+	$isLoguedAsAdmin = loginService($_GET['token']);
+	$isLoguedAsNotAdmin = loginServiceAsNotAdmin($_GET['token']);
+}
+if(!$isLoguedAsNotAdmin){
+	$isLoguedAsNotAdmin = isLoguedAsNotAdmin();
+}
+if(!$isLoguedAsAdmin){
+	$isLoguedAsAdmin = isLoguedAsAdmin();
+}
+
+
+/*
+ * $returnUrl sirve para que cuando hagamos un login trabajando en desarrollo, la url a la que debe redirigirnos es http://localhost/egc/src/
+ * Pero cuando estamos con la herramienta ya desplegada, la url a la que debe redirigirnos es http://storage-egc1516.rhcloud.com
+ */
+//$returnUrl= "http://storage-egc1516.rhcloud.com"
+$returnUrl= "http://localhost/egc/src/"
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -35,7 +62,6 @@
 </head>
 
 <body id="page-top">
-
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -47,13 +73,18 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Almacenamiento</a>
+                <?php if(!$isLoguedAsAdmin and !$isLoguedAsNotAdmin): ?>
+                	<a class="navbar-brand page-scroll" href="http://auth-egc.azurewebsites.net/?returnUrl=<?php echo $returnUrl ?>">LOGIN</a>
+                <?php elseif($isLoguedAsAdmin || $isLoguedAsNotAdmin): ?>
+                	<a class="navbar-brand page-scroll" href="../src/services/logout.php">LOG OUT</a>
+                <?php endif; ?>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">Introducci&oacute;n</a>
+                        <a class="page-scroll" href="#about">&iquest;Por d&oacute;nde empezamos...?</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#services">Servicios</a>
@@ -74,7 +105,7 @@
                 <h1>Bienvenido a almacenamiento de votos</h1>
                 <hr>
                 <p>Esta es la API del m&oacute;dulo de almacenamiento de la aplicaci&oacute;n Agora US 15/16</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">M&aacute;s informaci&oacute;n</a>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">&iquest;Por d&oacute;nde empezamos...?</a>
             </div>
         </div>
     </header>
@@ -95,7 +126,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Informaci&oacute;n de la API</h2>
+                    <h2 class="section-heading">Servicios de la API</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -111,6 +142,8 @@
                     </div>
                 </div>
                  
+         <!-- Este es el bloque 'ESTADÍSTICAS' que se mostrar� cuando se est� logueado como admin-->
+         <?php if($isLoguedAsAdmin){ ?>
                  <div class="col-md-4 text-center">
                     <div class="service-box">
                         <a href="../src/estadisticas.php"><i class="fa fa-4x fa-pie-chart wow bounceIn text-primary" data-wow-delay=".1s"></i></a>
@@ -118,7 +151,26 @@
                         <p class="text-muted">A trav&eacute;s de <a href="../src/estadisticas.php">&eacute;ste</a> enlace podr&aacute; observar las estad&iacute;sticas de votos totales por cada tipo de votaci&oacute;n realizada.</p>
                     </div>
                 </div>
-                
+ 		<!-- Este es el bloque 'ESTADÍSTICAS' que se mostrar� cuando NO se est� logueado como admin-->
+ 		<!-- Alberto: Ya hacemos un login en la cabecera de la página. Veo muy bien indicar que para las estadisticas es necesario hacer un login. Pero luego el enlace de abajo se ve feo aqui en medio de la aplicación. Igual cambiando el css queda mucho mejor. Simplemente evaluarlo -->
+ 		<?php }else{ ?>
+                <div class="col-md-4 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-pie-chart wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                        <h3>Estadísticas</h3>
+                        <p class="text-muted">Necesitar&aacute; hacer login como administrador para poder acceder a las estad&iacute;sticas.</p>
+                        <h3>
+                        	<?php if($isLoguedAsNotAdmin): ?>
+                				<a id="loginStyle" href="../src/services/logout.php">LOG OUT</a>
+             			    <?php else: ?>
+                        		<a id="loginStyle" href="http://auth-egc.azurewebsites.net/?returnUrl=<?php echo $returnUrl ?>">LOGIN</a>
+               				<?php endif; ?>
+                        </h3>
+                    </div>
+                </div>
+		<?php } ?>        
+         <!-- -------------------------------------------------------------------------------- -->
+         
                 <div class="col-md-4 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
