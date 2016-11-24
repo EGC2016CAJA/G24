@@ -13,4 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('/votes', 'VotesController');
+
+Route::group(['prefix' => 'v1.0', 'middleware' => 'auth:api'], function(){
+    Route::resource('votes', 'VotesController');
+
+});
