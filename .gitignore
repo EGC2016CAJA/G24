@@ -1,7 +1,7 @@
-# Aptana files
-##############
-.project
-.settings/
-
-# Excluir carpeta build de Phing
-build/
+/node_modules
+/public/storage
+/vendor
+/.idea
+Homestead.json
+Homestead.yaml
+.env
