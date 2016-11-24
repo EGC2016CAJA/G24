@@ -42,7 +42,15 @@ class VotesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $properties = $request->input();
+
+        $newVote = Vote::create($properties);
+
+        return response()->json(array(
+            'error' => false,
+            'results' => $newVote,
+            ), 200
+        );
     }
 
     /**
