@@ -8,5 +8,4 @@ class Vote extends Model
 {
     protected $fillable = ['vote'];
 
-    public $timestamps = false;
 }
