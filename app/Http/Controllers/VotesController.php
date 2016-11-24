@@ -61,7 +61,12 @@ class VotesController extends Controller
      */
     public function show($id)
     {
-        //
+        $vote = Vote::find($id);
+        return response()->json(array(
+            'error' => false,
+            'results' => $vote,
+            ), 200
+        );
     }
 
     /**
@@ -84,7 +89,17 @@ class VotesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $properties = $request->input();
+
+        $vote = Vote::find($id);
+        $vote->update($properties);
+
+
+        return response()->json(array(
+            'error' => false,
+            'results' => $vote,
+        ), 200
+        );
     }
 
     /**
@@ -95,6 +110,14 @@ class VotesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $vote = Vote::find($id);
+
+        $vote->delete();
+
+        return response()->json(array(
+            'error' => false,
+            'results' => $vote,
+            ), 200
+        );
     }
 }
