@@ -28,3 +28,9 @@ XML PHP Extension
 
 # Descripción del proyecto
 Nuestro módulo se encarga de gestionar el almacenamiento de votos de la aplicación.
+Para ello vamos a gestionar una API Rest que permita hacer llamadas a nuestro módulo 
+para almacenar o transmitir esa información de encuestas y votos necesaria para que
+el sistema tenga una base de datos.
+
+Usaremos ZenHub para la gestión de incidencias, gestionandolas con la dashboard que nos
+ofrece dentro de GitHub.
