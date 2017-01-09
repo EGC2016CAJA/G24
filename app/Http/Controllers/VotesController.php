@@ -24,7 +24,7 @@ class VotesController extends ApiController
      *     ),
      *     @SWG\Response(
      *         response=401,
-     *         description="Unauthorized action.",
+     *         description="Accion no autorizada",
      *     ),
      * )
      */
@@ -51,10 +51,24 @@ class VotesController extends ApiController
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display a listing of the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     *
+     * @SWG\Post(
+     *     path="/v1.0/votes",
+     *     summary="Guarda el voto",
+     *     produces={"application/json"},
+     *     tags={"POST"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Voto guardado"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
      */
     public function store(Request $request)
     {
