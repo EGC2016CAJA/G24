@@ -207,11 +207,11 @@ class VotesController extends ApiController
      *     tags={"VOTE"},
      *     @SWG\Response(
      *         response=200,
-     *         description="Borrar el voto"
+     *         description="Voto borrado"
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Delete a vote",
+     *         description="Vote",
      *         required=true,
      *         type="integer",
      *         in="path"
