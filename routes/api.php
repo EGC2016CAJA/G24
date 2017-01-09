@@ -21,5 +21,6 @@ Route::group(['prefix' => 'v1.0'], function(){
     Route::resource('votes', 'VotesController');
     Route::resource('options', 'OptionsController');
     Route::resource('surveys', 'SurveysController');
+    Route::resource('users', 'UsersController');
 
 });

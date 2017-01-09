@@ -30,7 +30,7 @@ class VotesController extends ApiController
      */
     public function index()
     {
-        $votes = Vote::all();
+        $votes = Vote::with('user')->get();
 
         return response()->json(array(
             'error' => false,
