@@ -166,6 +166,35 @@ class VotesController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Delete(
+     *     path="/v1.0/votes/destroy/{vote}",
+     *     summary="Borrar el voto",
+     *     produces={"application/json"},
+     *     tags={"Delete"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Borrar el voto"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="vote",
+     *         description="Delete a vote",
+     *         required=true,
+     *         type="string",
+     *         in="query"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     ),
+     * )
+     */
+
     public function destroy($id)
     {
         $vote = Vote::find($id);
