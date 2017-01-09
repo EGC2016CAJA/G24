@@ -151,7 +151,7 @@ class VotesController extends ApiController
      *
      * @return \Illuminate\Http\Response
      *
-     * @SWG\Update(
+     * @SWG\Put(
      *     path="/v1.0/votes/{id}",
      *     summary="Actualizar el voto",
      *     produces={"application/json"},
