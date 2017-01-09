@@ -1,16 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: antarccub
- * Date: 09/01/2017
- * Time: 17:08
- */
 
-namespace app\Http\Controllers;
+namespace App\Http\Controllers;
 
-
-use Symfony\Component\HttpKernel\Tests\Controller;
-
+use Illuminate\Http\Request;
 /**
  * Class ApiController
  *
@@ -40,8 +32,7 @@ use Symfony\Component\HttpKernel\Tests\Controller;
  *     )
  * )
  */
-
 class ApiController extends Controller
 {
-
+    //
 }
