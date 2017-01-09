@@ -82,6 +82,34 @@ class OptionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Delete(
+     *     path="/v1.0/options/{id}",
+     *     summary="Borrar la opción",
+     *     produces={"application/json"},
+     *     tags={"OPTION"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Opción borrada"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id",
+     *         description="option",
+     *         required=true,
+     *         type="string",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     ),
+     * )
+     */
+
     public function destroy($id)
     {
         //
