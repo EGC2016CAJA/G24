@@ -12,6 +12,26 @@ class OptionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Get(
+     *     path="/v1.0/options",
+     *     summary="Muestra el índice",
+     *     produces={"application/json"},
+     *     tags={"OPTION"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Muestra el índice"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
+     */
     public function index()
     {
         $results = Option::with('votes')->get();
@@ -39,7 +59,15 @@ class OptionsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $properties = $request->input();
+
+        $newOption = Option::create($properties);
+
+        return response()->json(array(
+            'error' => false,
+            'results' => $newOption,
+        ), 200
+        );
     }
 
     /**
@@ -82,6 +110,34 @@ class OptionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Delete(
+     *     path="/v1.0/options/{id}",
+     *     summary="Borrar la opción",
+     *     produces={"application/json"},
+     *     tags={"OPTION"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Opción borrada"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id",
+     *         description="option",
+     *         required=true,
+     *         type="string",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     ),
+     * )
+     */
+
     public function destroy($id)
     {
         //

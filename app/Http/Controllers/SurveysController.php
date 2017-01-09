@@ -11,6 +11,26 @@ class SurveysController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *
+     * @SWG\Get(
+     *     path="/v1.0/surveys",
+     *     summary="Muestra el índice",
+     *     produces={"application/json"},
+     *     tags={"SURVEY"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Muestra el índice"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
+     */
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -33,7 +53,26 @@ class SurveysController extends Controller
     {
         //
     }
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Post(
+     *     path="/v1.0/surveys",
+     *     summary="Guarda la encuesta",
+     *     produces={"application/json"},
+     *     tags={"SURVEY"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Encuesta guardada"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
+     */
     /**
      * Store a newly created resource in storage.
      *
@@ -42,9 +81,50 @@ class SurveysController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $properties = $request->input();
 
+        $newSurvey = Survey::create($properties);
+
+        return response()->json(array(
+            'error' => false,
+            'results' => $newSurvey,
+        ), 200
+        );
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Get(
+     *     path="/v1.0/surveys/{id}",
+     *     summary="Muestra la encuesta",
+     *     produces={"application/json"},
+     *     tags={"SURVEY"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Encuesta mostrada"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id",
+     *         description="Encuesta",
+     *         required=true,
+     *         type="integer",
+     *         format="int",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
+     */
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     /**
      * Display the specified resource.
      *
@@ -74,6 +154,34 @@ class SurveysController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Put(
+     *     path="/v1.0/surveys/{id}",
+     *     summary="Actualizar la encuesta",
+     *     produces={"application/json"},
+     *     tags={"SURVEY"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Encuesta actualizado"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id",
+     *         description="Survey",
+     *         required=true,
+     *         type="integer",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     ),
+     * )
+     */
     public function update(Request $request, $id)
     {
         //
@@ -84,6 +192,34 @@ class SurveysController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     */
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Delete(
+     *     path="/v1.0/votes/{id}",
+     *     summary="Borrar el voto",
+     *     produces={"application/json"},
+     *     tags={"VOTE"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Voto borrado"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id",
+     *         description="Vote",
+     *         required=true,
+     *         type="integer",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     ),
+     * )
      */
     public function destroy($id)
     {
