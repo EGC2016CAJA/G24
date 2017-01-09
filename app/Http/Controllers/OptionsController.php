@@ -12,6 +12,26 @@ class OptionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Get(
+     *     path="/v1.0/options",
+     *     summary="Muestra el índice",
+     *     produces={"application/json"},
+     *     tags={"OPTION"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Muestra el índice"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
+     */
     public function index()
     {
         $results = Option::with('votes')->get();
