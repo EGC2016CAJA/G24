@@ -53,7 +53,26 @@ class SurveysController extends Controller
     {
         //
     }
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Post(
+     *     path="/v1.0/surveys",
+     *     summary="Guarda la encuesta",
+     *     produces={"application/json"},
+     *     tags={"SURVEY"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Encuesta guardada"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
+     */
     /**
      * Store a newly created resource in storage.
      *
