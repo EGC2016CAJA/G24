@@ -173,7 +173,7 @@ class VotesController extends ApiController
      * @return \Illuminate\Http\Response
      *
      * @SWG\Delete(
-     *     path="/v1.0/votes/destroy/{vote}",
+     *     path="/v1.0/votes/destroy/{id}",
      *     summary="Borrar el voto",
      *     produces={"application/json"},
      *     tags={"Delete"},
@@ -182,11 +182,11 @@ class VotesController extends ApiController
      *         description="Borrar el voto"
      *     ),
      *     @SWG\Parameter(
-     *         name="vote",
+     *         name="id",
      *         description="Delete a vote",
      *         required=true,
-     *         type="string",
-     *         in="query"
+     *         type="integer",
+     *         in="path"
      *     ),
      *     @SWG\Response(
      *         response=401,
