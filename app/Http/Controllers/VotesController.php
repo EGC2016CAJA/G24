@@ -158,11 +158,11 @@ class VotesController extends ApiController
      *     tags={"VOTE"},
      *     @SWG\Response(
      *         response=200,
-     *         description="Actualizar el voto"
+     *         description="Voto actualizado"
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Update a vote",
+     *         description="Vote",
      *         required=true,
      *         type="integer",
      *         in="path"
