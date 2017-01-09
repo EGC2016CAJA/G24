@@ -167,7 +167,7 @@ class SurveysController extends Controller
      *     tags={"SURVEY"},
      *     @SWG\Response(
      *         response=200,
-     *         description="Encuesta actualizado"
+     *         description="Encuesta actualizada"
      *     ),
      *     @SWG\Parameter(
      *         name="id",
@@ -178,7 +178,7 @@ class SurveysController extends Controller
      *     ),
      *     @SWG\Response(
      *         response=401,
-     *         description="Unauthorized action.",
+     *         description="Operación no autorizada.",
      *     ),
      * )
      */
@@ -200,13 +200,13 @@ class SurveysController extends Controller
      * @return \Illuminate\Http\Response
      *
      * @SWG\Delete(
-     *     path="/v1.0/votes/{id}",
-     *     summary="Borrar el voto",
+     *     path="/v1.0/survey/{id}",
+     *     summary="Borrar la encuesta",
      *     produces={"application/json"},
      *     tags={"VOTE"},
      *     @SWG\Response(
      *         response=200,
-     *         description="Voto borrado"
+     *         description="Encuesta borrada"
      *     ),
      *     @SWG\Parameter(
      *         name="id",
@@ -217,7 +217,7 @@ class SurveysController extends Controller
      *     ),
      *     @SWG\Response(
      *         response=401,
-     *         description="Unauthorized action.",
+     *         description="Operación no autorizada.",
      *     ),
      * )
      */
