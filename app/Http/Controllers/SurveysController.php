@@ -154,6 +154,34 @@ class SurveysController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Put(
+     *     path="/v1.0/surveys/{id}",
+     *     summary="Actualizar la encuesta",
+     *     produces={"application/json"},
+     *     tags={"SURVEY"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Encuesta actualizado"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id",
+     *         description="Survey",
+     *         required=true,
+     *         type="integer",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     ),
+     * )
+     */
     public function update(Request $request, $id)
     {
         //
@@ -164,6 +192,34 @@ class SurveysController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     */
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Delete(
+     *     path="/v1.0/votes/{id}",
+     *     summary="Borrar el voto",
+     *     produces={"application/json"},
+     *     tags={"VOTE"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Voto borrado"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id",
+     *         description="Vote",
+     *         required=true,
+     *         type="integer",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     ),
+     * )
      */
     public function destroy($id)
     {
