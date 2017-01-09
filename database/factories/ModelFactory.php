@@ -50,7 +50,9 @@ $factory->define(App\Models\Vote::class, function (){
 
     return [
 
-        'user' => rand(1,99)
+        'option_id' => factory(App\Models\Option::class)->create()->id,
+        'user_id' => factory(App\Models\User::class)->create()->id,
+
     ];
 });
 
@@ -67,6 +69,8 @@ $factory->define(App\Models\Option::class, function (Faker\Generator $faker){
     return [
 
         'name' => $faker->company,
+        'survey_id' => factory(App\Models\Survey::class)->create()->id,
+
     ];
 });
 
