@@ -83,7 +83,40 @@ class SurveysController extends Controller
     {
         //
     }
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Get(
+     *     path="/v1.0/surveys/{id}",
+     *     summary="Muestra la encuesta",
+     *     produces={"application/json"},
+     *     tags={"SURVEY"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Encuesta mostrada"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id",
+     *         description="Encuesta",
+     *         required=true,
+     *         type="integer",
+     *         format="int",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
+     */
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     /**
      * Display the specified resource.
      *
