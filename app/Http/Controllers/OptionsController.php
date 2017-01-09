@@ -59,7 +59,15 @@ class OptionsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $properties = $request->input();
+
+        $newOption = Option::create($properties);
+
+        return response()->json(array(
+            'error' => false,
+            'results' => $newOption,
+        ), 200
+        );
     }
 
     /**
