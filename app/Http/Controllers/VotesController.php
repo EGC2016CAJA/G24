@@ -84,6 +84,33 @@ class VotesController extends ApiController
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Get(
+     *     path="/v1.0/votes/{vote}",
+     *     summary="Muestra el voto",
+     *     produces={"application/json"},
+     *     tags={"GET"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Voto mostrado"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="vote",
+     *         description="Voto",
+     *         required=true,
+     *         type="string",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
+     */
+    /**
      * Display the specified resource.
      *
      * @param  int  $id
