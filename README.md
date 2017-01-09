@@ -1,27 +1,36 @@
-# Laravel PHP Framework
+# AgoraUS - EGC-Almacenamiento-de-votos - G24
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Repositorio del módulo de almacenamiento de votos correspondiente al proyecto AgoraUS de la asignatura de EGC.
+Grupo 24 de EGC
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Miembros:
+Joshua Cifuentes Romero
+Antonio Arciniega Cubero
+Adrián Gómez Serrano
+Christopher Ganfornina Triguero
+
+Para más información tiene la información de nuestra API: [Información]().
+También tiene la información de nuestro proyecto en la wiki de la asignatura: [Wiki](https://1984.lsi.us.es/wiki-egc/index.php/Almacenamiento).
 
 ## Official Documentation
 
 Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
-## Contributing
+# Dependencias
+PHP >= 5.6.4
+OpenSSL PHP Extension
+PDO PHP Extension
+Mbstring PHP Extension
+Tokenizer PHP Extension
+XML PHP Extension
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+# Descripción del proyecto
+Nuestro módulo se encarga de gestionar el almacenamiento de votos de la aplicación.
+Para ello vamos a gestionar una API Rest que permita hacer llamadas a nuestro módulo 
+para almacenar o transmitir esa información de encuestas y votos necesaria para que
+el sistema tenga una base de datos.
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Usaremos ZenHub para la gestión de incidencias, gestionandolas con la dashboard que nos
+ofrece dentro de GitHub.
