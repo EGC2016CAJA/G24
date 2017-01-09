@@ -17,7 +17,7 @@ class VotesController extends ApiController
      *     path="/v1.0/votes",
      *     summary="Muestra el índice",
      *     produces={"application/json"},
-     *     tags={"GET"},
+     *     tags={"VOTE"},
      *     @SWG\Response(
      *         response=200,
      *         description="Muestra el índice"
@@ -59,7 +59,7 @@ class VotesController extends ApiController
      *     path="/v1.0/votes",
      *     summary="Guarda el voto",
      *     produces={"application/json"},
-     *     tags={"POST"},
+     *     tags={"VOTE"},
      *     @SWG\Response(
      *         response=200,
      *         description="Voto guardado"
@@ -92,7 +92,7 @@ class VotesController extends ApiController
      *     path="/v1.0/votes/{id}",
      *     summary="Muestra el voto",
      *     produces={"application/json"},
-     *     tags={"GET"},
+     *     tags={"VOTE"},
      *     @SWG\Response(
      *         response=200,
      *         description="Voto mostrado"
@@ -155,7 +155,7 @@ class VotesController extends ApiController
      *     path="/v1.0/votes/{id}",
      *     summary="Actualizar el voto",
      *     produces={"application/json"},
-     *     tags={"PUT"},
+     *     tags={"VOTE"},
      *     @SWG\Response(
      *         response=200,
      *         description="Actualizar el voto"
@@ -204,7 +204,7 @@ class VotesController extends ApiController
      *     path="/v1.0/votes/{id}",
      *     summary="Borrar el voto",
      *     produces={"application/json"},
-     *     tags={"DELETE"},
+     *     tags={"VOTE"},
      *     @SWG\Response(
      *         response=200,
      *         description="Borrar el voto"
