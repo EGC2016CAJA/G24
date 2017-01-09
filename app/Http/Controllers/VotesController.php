@@ -14,27 +14,13 @@ class VotesController extends ApiController
      * @return \Illuminate\Http\Response
      *
      * @SWG\Get(
-     *     path="/v1.0/member/{id_member}/test",
-     *     summary="Test assigned to user",
+     *     path="/v1.0/votes",
+     *     summary="Muestra el índice",
      *     produces={"application/json"},
-     *     tags={"Member"},
+     *     tags={"GET","HEAD"},
      *     @SWG\Response(
      *         response=200,
-     *         description="Show the tests assigned to a given user"
-     *     ),
-     *     @SWG\Parameter(
-     *         name="access_token",
-     *         description="Access token obtained through OAUth",
-     *         required=true,
-     *         type="string",
-     *         in="query"
-     *     ),
-     *     @SWG\Parameter(
-     *         name="id_member",
-     *         description="Member identifier",
-     *         required=true,
-     *         type="string",
-     *         in="path"
+     *         description="Muestra el índice"
      *     ),
      *     @SWG\Response(
      *         response=401,
