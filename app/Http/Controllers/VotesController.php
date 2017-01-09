@@ -89,7 +89,7 @@ class VotesController extends ApiController
      * @return \Illuminate\Http\Response
      *
      * @SWG\Get(
-     *     path="/v1.0/votes/{vote}",
+     *     path="/v1.0/votes/{id}",
      *     summary="Muestra el voto",
      *     produces={"application/json"},
      *     tags={"GET"},
@@ -98,10 +98,11 @@ class VotesController extends ApiController
      *         description="Voto mostrado"
      *     ),
      *     @SWG\Parameter(
-     *         name="vote",
+     *         name="id",
      *         description="Voto",
      *         required=true,
-     *         type="string",
+     *         type="integer",
+     *         format="int",
      *         in="path"
      *     ),
      *     @SWG\Response(
@@ -144,6 +145,34 @@ class VotesController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Put(
+     *     path="/v1.0/votes/{id}",
+     *     summary="Actualizar el voto",
+     *     produces={"application/json"},
+     *     tags={"PUT"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Actualizar el voto"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id",
+     *         description="Update a vote",
+     *         required=true,
+     *         type="integer",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     ),
+     * )
+     */
     public function update(Request $request, $id)
     {
         $properties = $request->input();
@@ -165,6 +194,35 @@ class VotesController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Delete(
+     *     path="/v1.0/votes/{id}",
+     *     summary="Borrar el voto",
+     *     produces={"application/json"},
+     *     tags={"DELETE"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Borrar el voto"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id",
+     *         description="Delete a vote",
+     *         required=true,
+     *         type="integer",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     ),
+     * )
+     */
+
     public function destroy($id)
     {
         $vote = Vote::find($id);
