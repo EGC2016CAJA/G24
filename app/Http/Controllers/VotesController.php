@@ -14,31 +14,17 @@ class VotesController extends ApiController
      * @return \Illuminate\Http\Response
      *
      * @SWG\Get(
-     *     path="/v1.0/member/{id_member}/test",
-     *     summary="Test assigned to user",
+     *     path="/v1.0/votes",
+     *     summary="Muestra el índice",
      *     produces={"application/json"},
-     *     tags={"Member"},
+     *     tags={"GET"},
      *     @SWG\Response(
      *         response=200,
-     *         description="Show the tests assigned to a given user"
-     *     ),
-     *     @SWG\Parameter(
-     *         name="access_token",
-     *         description="Access token obtained through OAUth",
-     *         required=true,
-     *         type="string",
-     *         in="query"
-     *     ),
-     *     @SWG\Parameter(
-     *         name="id_member",
-     *         description="Member identifier",
-     *         required=true,
-     *         type="string",
-     *         in="path"
+     *         description="Muestra el índice"
      *     ),
      *     @SWG\Response(
      *         response=401,
-     *         description="Unauthorized action.",
+     *         description="Accion no autorizada",
      *     ),
      * )
      */
@@ -65,10 +51,24 @@ class VotesController extends ApiController
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display a listing of the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     *
+     * @SWG\Post(
+     *     path="/v1.0/votes",
+     *     summary="Guarda el voto",
+     *     produces={"application/json"},
+     *     tags={"POST"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Voto guardado"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
      */
     public function store(Request $request)
     {
@@ -83,6 +83,33 @@ class VotesController extends ApiController
         );
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Get(
+     *     path="/v1.0/votes/{vote}",
+     *     summary="Muestra el voto",
+     *     produces={"application/json"},
+     *     tags={"GET"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Voto mostrado"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="vote",
+     *         description="Voto",
+     *         required=true,
+     *         type="string",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
+     */
     /**
      * Display the specified resource.
      *
