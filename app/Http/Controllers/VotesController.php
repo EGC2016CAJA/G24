@@ -5,12 +5,42 @@ namespace App\Http\Controllers;
 use App\Models\Vote;
 use Illuminate\Http\Request;
 
-class VotesController extends Controller
+
+class VotesController extends ApiController
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *
+     * @SWG\Get(
+     *     path="/v1.0/member/{id_member}/test",
+     *     summary="Test assigned to user",
+     *     produces={"application/json"},
+     *     tags={"Member"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Show the tests assigned to a given user"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="access_token",
+     *         description="Access token obtained through OAUth",
+     *         required=true,
+     *         type="string",
+     *         in="query"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id_member",
+     *         description="Member identifier",
+     *         required=true,
+     *         type="string",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Unauthorized action.",
+     *     ),
+     * )
      */
     public function index()
     {
