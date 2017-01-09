@@ -89,7 +89,7 @@ class VotesController extends ApiController
      * @return \Illuminate\Http\Response
      *
      * @SWG\Get(
-     *     path="/v1.0/votes/{vote}",
+     *     path="/v1.0/votes/{id}",
      *     summary="Muestra el voto",
      *     produces={"application/json"},
      *     tags={"GET"},
@@ -98,10 +98,11 @@ class VotesController extends ApiController
      *         description="Voto mostrado"
      *     ),
      *     @SWG\Parameter(
-     *         name="vote",
+     *         name="id",
      *         description="Voto",
      *         required=true,
-     *         type="string",
+     *         type="integer",
+     *         format="int",
      *         in="path"
      *     ),
      *     @SWG\Response(
