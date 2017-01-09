@@ -11,6 +11,26 @@ class SurveysController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *
+     * @SWG\Get(
+     *     path="/v1.0/surveys",
+     *     summary="Muestra el índice",
+     *     produces={"application/json"},
+     *     tags={"SURVEY"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Muestra el índice"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
+     */
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
