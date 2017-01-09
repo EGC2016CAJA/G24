@@ -81,7 +81,15 @@ class SurveysController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $properties = $request->input();
+
+        $newSurvey = Survey::create($properties);
+
+        return response()->json(array(
+            'error' => false,
+            'results' => $newSurvey,
+        ), 200
+        );
     }
     /**
      * Display a listing of the resource.
