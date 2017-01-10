@@ -76,7 +76,7 @@ class UsersController extends Controller
     {
         $properties = $request->input();
 
-        $newUser = Survey::create($properties);
+        $newUser = User::create($properties);
 
         return response()->json(array(
             'error' => false,
@@ -176,7 +176,16 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $properties = $request->input();
+
+        $user = User::find($id);
+
+        $user->update($properties);
+        return response()->json(array(
+            'error' => false,
+            'results' => $user,
+        ), 200
+        );
     }
 
     /**
@@ -215,6 +224,13 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+
+
+        return response()->json(array(
+            'error' => false,
+            'results' => $user->delete(),
+        ), 200
+        );
     }
 }
