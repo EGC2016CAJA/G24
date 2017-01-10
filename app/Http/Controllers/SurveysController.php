@@ -133,7 +133,12 @@ class SurveysController extends Controller
      */
     public function show($id)
     {
-        //
+        $survey = Survey::find($id);
+        return response()->json(array(
+            'error' => false,
+            'results' => $survey,
+        ), 200
+        );
     }
 
     /**

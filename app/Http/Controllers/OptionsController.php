@@ -129,7 +129,11 @@ class OptionsController extends Controller
      */
     public function show($id)
     {
-        //
+        $option = Option::find($id);
+        return response()->json(array(
+            'error' => false,
+            'results' => $option,
+        ), 200);
     }
 
     /**
