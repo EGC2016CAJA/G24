@@ -171,7 +171,7 @@ class SurveysController extends Controller
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Survey",
+     *         description="Encuesta",
      *         required=true,
      *         type="integer",
      *         in="path"
@@ -203,14 +203,14 @@ class SurveysController extends Controller
      *     path="/v1.0/survey/{id}",
      *     summary="Borrar la encuesta",
      *     produces={"application/json"},
-     *     tags={"VOTE"},
+     *     tags={"SURVEY"},
      *     @SWG\Response(
      *         response=200,
      *         description="Encuesta borrada"
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Vote",
+     *         description="Encuesta",
      *         required=true,
      *         type="integer",
      *         in="path"
