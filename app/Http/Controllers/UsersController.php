@@ -19,7 +19,7 @@ class UsersController extends Controller
      *     tags={"USER"},
      *     @SWG\Response(
      *         response=200,
-     *         description="Muestra el índice"
+     *         description="Muestra un listado de usuarios"
      *     ),
      *     @SWG\Response(
      *         response=401,

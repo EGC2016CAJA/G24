@@ -20,7 +20,7 @@ class VotesController extends ApiController
      *     tags={"VOTE"},
      *     @SWG\Response(
      *         response=200,
-     *         description="Muestra el índice"
+     *         description="Muestra un listado de votos"
      *     ),
      *     @SWG\Response(
      *         response=401,
