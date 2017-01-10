@@ -24,7 +24,7 @@ class OptionsController extends Controller
      *     tags={"OPTION"},
      *     @SWG\Response(
      *         response=200,
-     *         description="Muestra el índice"
+     *         description="Muestra un listado de Opciones"
      *     ),
      *     @SWG\Response(
      *         response=401,

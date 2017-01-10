@@ -19,7 +19,7 @@ class SurveysController extends Controller
      *     tags={"SURVEY"},
      *     @SWG\Response(
      *         response=200,
-     *         description="Muestra el índice"
+     *         description="Muestra un listado con todas las encuestas"
      *     ),
      *     @SWG\Response(
      *         response=401,
