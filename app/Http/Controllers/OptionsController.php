@@ -20,6 +20,7 @@ class OptionsController extends Controller
      * @SWG\Get(
      *     path="/v1.0/options",
      *     summary="Muestra un listado de Opciones",
+     *     description="Muestra todas las opciones guardadas hasta el momento",
      *     produces={"application/json"},
      *     tags={"OPTION"},
      *     @SWG\Response(
@@ -60,6 +61,7 @@ class OptionsController extends Controller
      * @SWG\Post(
      *     path="/v1.0/options",
      *     summary="Guarda la opcion",
+     *     description="Crea una nueva opcion con los parametros deseados",
      *     produces={"application/json"},
      *     tags={"OPTION"},
      *     @SWG\Parameter(
@@ -117,6 +119,7 @@ class OptionsController extends Controller
      * @SWG\Get(
      *     path="/v1.0/options/{id}",
      *     summary="Muestra la opcion",
+     *     description="Muestra la información de la opcion con id={id}",
      *     produces={"application/json"},
      *     tags={"OPTION"},
      *     @SWG\Response(
@@ -179,6 +182,7 @@ class OptionsController extends Controller
      * @SWG\Put(
      *     path="/v1.0/options/{id}",
      *     summary="Actualizar la opcion",
+     *     description="Reemplaza la información de la opcion con id={id}",
      *     produces={"application/json"},
      *     tags={"OPTION"},
      *     @SWG\Response(
@@ -191,6 +195,22 @@ class OptionsController extends Controller
      *         required=true,
      *         type="integer",
      *         in="path"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="name",
+     *         description="Nombre de la opción",
+     *         required=true,
+     *         type="string",
+     *         format="string",
+     *         in="formData"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="survey_id",
+     *         description="ID de la encuesta a la que pertenece la opción.",
+     *         required=true,
+     *         type="integer",
+     *         format="int",
+     *         in="formData"
      *     ),
      *     @SWG\Response(
      *         response=401,
@@ -217,6 +237,7 @@ class OptionsController extends Controller
      * @SWG\Delete(
      *     path="/v1.0/options/{id}",
      *     summary="Borrar la opción",
+     *     description="Borra la opcion con id={id}",
      *     produces={"application/json"},
      *     tags={"OPTION"},
      *     @SWG\Response(
