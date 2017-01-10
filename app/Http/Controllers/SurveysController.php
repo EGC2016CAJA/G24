@@ -15,6 +15,7 @@ class SurveysController extends Controller
      * @SWG\Get(
      *     path="/v1.0/surveys",
      *     summary="Muestra un listado con todas las encuestas",
+     *     description="Muestra todas las encuestas guardadas hasta el momento"
      *     produces={"application/json"},
      *     tags={"SURVEY"},
      *     @SWG\Response(
@@ -61,6 +62,7 @@ class SurveysController extends Controller
      * @SWG\Post(
      *     path="/v1.0/surveys",
      *     summary="Guarda la encuesta",
+     *     description="Crea una nueva encuesta con los parametros deseados"
      *     produces={"application/json"},
      *     tags={"SURVEY"},
      *     @SWG\Parameter(
@@ -107,6 +109,7 @@ class SurveysController extends Controller
      * @SWG\Get(
      *     path="/v1.0/surveys/{id}",
      *     summary="Muestra la encuesta",
+     *     description="Muestra la información de la encuesta con id={id}"
      *     produces={"application/json"},
      *     tags={"SURVEY"},
      *     @SWG\Response(
@@ -120,6 +123,14 @@ class SurveysController extends Controller
      *         type="integer",
      *         format="int",
      *         in="path"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="name",
+     *         description="Nombre de la encuesta",
+     *         required=true,
+     *         type="string",
+     *         format="string",
+     *         in="formData"
      *     ),
      *     @SWG\Response(
      *         response=401,
@@ -176,6 +187,7 @@ class SurveysController extends Controller
      * @SWG\Put(
      *     path="/v1.0/surveys/{id}",
      *     summary="Actualizar la encuesta",
+     *     description="Reemplaza la información de la encuesta con id={id}"
      *     produces={"application/json"},
      *     tags={"SURVEY"},
      *     @SWG\Response(
@@ -215,6 +227,7 @@ class SurveysController extends Controller
      * @SWG\Delete(
      *     path="/v1.0/survey/{id}",
      *     summary="Borrar la encuesta",
+     *     description="Borra la encuesta con id={id}"
      *     produces={"application/json"},
      *     tags={"SURVEY"},
      *     @SWG\Response(
