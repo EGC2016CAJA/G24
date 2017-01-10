@@ -59,7 +59,15 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $properties = $request->input();
+
+        $newUser = Survey::create($properties);
+
+        return response()->json(array(
+            'error' => false,
+            'results' => $newUser,
+        ), 200
+        );
     }
 
     /**
