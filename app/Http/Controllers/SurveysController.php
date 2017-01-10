@@ -118,7 +118,7 @@ class SurveysController extends Controller
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Encuesta",
+     *         description="Identificador de la encuesta",
      *         required=true,
      *         type="integer",
      *         format="int",
@@ -196,7 +196,7 @@ class SurveysController extends Controller
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Encuesta",
+     *         description="Identificador de la encuesta",
      *         required=true,
      *         type="integer",
      *         in="path"
@@ -209,8 +209,17 @@ class SurveysController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $properties = $request->input();
+
+        $survey = Survey::find($id);
+        $survey->update($properties);
+
+
+        return response()->json(array(
+            'error' => false,
+            'results' => $survey,
+        ), 200
+        );    }
 
     /**
      * Remove the specified resource from storage.
@@ -236,7 +245,7 @@ class SurveysController extends Controller
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Encuesta",
+     *         description="Identificador de la encuesta",
      *         required=true,
      *         type="integer",
      *         in="path"
@@ -249,6 +258,14 @@ class SurveysController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $survey = Survey::find($id);
+
+        $survey->delete();
+
+        return response()->json(array(
+            'error' => false,
+            'results' => $survey,
+        ), 200
+        );
     }
 }

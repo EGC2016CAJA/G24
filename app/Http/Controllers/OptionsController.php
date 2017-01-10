@@ -128,7 +128,7 @@ class OptionsController extends Controller
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Opcion",
+     *         description="Identificador de la opción",
      *         required=true,
      *         type="integer",
      *         format="int",
@@ -191,7 +191,7 @@ class OptionsController extends Controller
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Option",
+     *         description="Identificador de la opción",
      *         required=true,
      *         type="integer",
      *         in="path"
@@ -220,7 +220,17 @@ class OptionsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $properties = $request->input();
+
+        $option = Option::find($id);
+        $option->update($properties);
+
+
+        return response()->json(array(
+            'error' => false,
+            'results' => $option,
+        ), 200
+        );
     }
 
     /**
@@ -246,7 +256,7 @@ class OptionsController extends Controller
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="option",
+     *         description="Identificador de la opción",
      *         required=true,
      *         type="string",
      *         in="path"
@@ -260,6 +270,14 @@ class OptionsController extends Controller
 
     public function destroy($id)
     {
-        //
+        $option = Option::find($id);
+
+        $option->delete();
+
+        return response()->json(array(
+            'error' => false,
+            'results' => $option,
+        ), 200
+        );
     }
 }

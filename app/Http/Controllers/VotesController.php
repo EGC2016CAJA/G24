@@ -118,7 +118,7 @@ class VotesController extends ApiController
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Voto",
+     *         description="Identificador del voto",
      *         required=true,
      *         type="integer",
      *         format="int",
@@ -182,7 +182,7 @@ class VotesController extends ApiController
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Voto",
+     *         description="Identificador del voto",
      *         required=true,
      *         type="integer",
      *         in="path"
@@ -248,7 +248,7 @@ class VotesController extends ApiController
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Voto",
+     *         description="Identificador del voto",
      *         required=true,
      *         type="integer",
      *         in="path"
