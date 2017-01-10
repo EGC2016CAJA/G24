@@ -30,7 +30,27 @@ class UsersController extends Controller
     {
         //
     }
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Post(
+     *     path="/v1.0/users",
+     *     summary="Guarda el usuario",
+     *     produces={"application/json"},
+     *     tags={"USER"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Usuario guardado"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
+     */
+    /**
     /**
      * Store a newly created resource in storage.
      *
