@@ -91,17 +91,17 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      *
      * @SWG\Get(
-     *     path="/v1.0/votes/{id}",
-     *     summary="Muestra el voto",
+     *     path="/v1.0/users/{id}",
+     *     summary="Muestra el usuario",
      *     produces={"application/json"},
-     *     tags={"VOTE"},
+     *     tags={"USER"},
      *     @SWG\Response(
      *         response=200,
-     *         description="Voto mostrado"
+     *         description="Usuario mostrado"
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Voto",
+     *         description="Usuario",
      *         required=true,
      *         type="integer",
      *         format="int",
@@ -145,6 +145,34 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     */
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Put(
+     *     path="/v1.0/votes/{id}",
+     *     summary="Actualizar el voto",
+     *     produces={"application/json"},
+     *     tags={"VOTE"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Voto actualizado"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id",
+     *         description="Vote",
+     *         required=true,
+     *         type="integer",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Acción no autorizada.",
+     *     ),
+     * )
      */
     public function update(Request $request, $id)
     {
