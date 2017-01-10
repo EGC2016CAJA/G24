@@ -192,17 +192,17 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      *
      * @SWG\Delete(
-     *     path="/v1.0/votes/{id}",
-     *     summary="Borrar el voto",
+     *     path="/v1.0/users/{id}",
+     *     summary="Borrar el usuario",
      *     produces={"application/json"},
-     *     tags={"VOTE"},
+     *     tags={"USER"},
      *     @SWG\Response(
      *         response=200,
-     *         description="Voto borrado"
+     *         description="Usuario borrado"
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Voto",
+     *         description="User",
      *         required=true,
      *         type="integer",
      *         in="path"

@@ -41,6 +41,7 @@ class OptionsController extends Controller
         ),200);
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -52,11 +53,33 @@ class OptionsController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Post(
+     *     path="/v1.0/options",
+     *     summary="Guarda la opcion",
+     *     produces={"application/json"},
+     *     tags={"OPTION"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Opcion guardado"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
+     */
+    /**
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         $properties = $request->input();
