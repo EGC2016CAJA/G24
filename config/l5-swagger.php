@@ -18,7 +18,7 @@ return [
         |--------------------------------------------------------------------------
         */
 
-        'auth_token' => 'Bearer '.env('L5_SWAGGER_API_AUTH_TOKEN', true),
+        'auth_token' => 'Bearer {INTRODUZCA AQUI SU ACCESS TOKEN}',
 
         /*
         |--------------------------------------------------------------------------
@@ -132,7 +132,7 @@ return [
         |--------------------------------------------------------------------------
         */
 
-        'assets_public' => 'http://localhost/egc/public/vendor/l5-swagger',
+        'assets_public' => env('APP_URL').'public/vendor/l5-swagger',
 
         /*
         |--------------------------------------------------------------------------

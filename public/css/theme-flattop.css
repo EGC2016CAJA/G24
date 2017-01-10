@@ -1662,3 +1662,12 @@
 .swagger-section #auth_container .authorize__btn:hover {
     background-color: #FFFFFF;
 }
+
+.api-tittle{
+  display: inline !important;
+  color: white !important;
+}
+
+#input_apiKey{
+  width: 337px !important;
+}
