@@ -10,12 +10,18 @@ use Illuminate\Http\Request;
  *
  * @SWG\Swagger(
  *     basePath="",
- *     host="laravel.localhost",
+ *     host="localhost/egc/public/api",
  *     schemes={"http"},
  *     @SWG\Info(
  *         version="1.0",
  *         title="Sample API",
  *         @SWG\Contact(name="", url=""),
+ *     ),
+ *     @SWG\SecurityScheme(
+ *         securityDefinition="X-Api-Token",
+ *         type="apiKey",
+ *         in="header",
+ *         name="api-key"
  *     ),
  *     @SWG\Definition(
  *         definition="Error",
@@ -30,6 +36,7 @@ use Illuminate\Http\Request;
  *             type="string"
  *         )
  *     )
+ *
  * )
  */
 class ApiController extends Controller

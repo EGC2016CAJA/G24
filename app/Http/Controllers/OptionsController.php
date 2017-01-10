@@ -62,6 +62,22 @@ class OptionsController extends Controller
      *     summary="Guarda la opcion",
      *     produces={"application/json"},
      *     tags={"OPTION"},
+     *     @SWG\Parameter(
+     *         name="name",
+     *         description="Nombre de la opción",
+     *         required=true,
+     *         type="string",
+     *         format="string",
+     *         in="formData"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="survey_id",
+     *         description="ID de la encuesta a la que pertenece la opción.",
+     *         required=true,
+     *         type="integer",
+     *         format="int",
+     *         in="formData"
+     *     ),
      *     @SWG\Response(
      *         response=200,
      *         description="Opcion guardada"

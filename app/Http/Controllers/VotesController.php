@@ -60,6 +60,22 @@ class VotesController extends ApiController
      *     summary="Guarda el voto",
      *     produces={"application/json"},
      *     tags={"VOTE"},
+     *     @SWG\Parameter(
+     *         name="user_id",
+     *         description="Identificador del usuario que ha realizado el voto.",
+     *         required=true,
+     *         type="integer",
+     *         format="int",
+     *         in="formData"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="option_id",
+     *         description="Identificador de la opción asociada al voto.",
+     *         required=true,
+     *         type="integer",
+     *         format="int",
+     *         in="formData"
+     *     ),
      *     @SWG\Response(
      *         response=200,
      *         description="Voto guardado"

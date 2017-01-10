@@ -16,8 +16,8 @@ use Illuminate\Http\Request;
 
 
 
-//Route::group(['prefix' => 'v1.0', 'middleware' => 'auth:api'], function(){
-Route::group(['prefix' => 'v1.0'], function(){
+Route::group(['prefix' => 'v1.0', 'middleware' => 'auth:api'], function(){
+//Route::group(['prefix' => 'v1.0'], function(){
     Route::resource('votes', 'VotesController');
     Route::resource('options', 'OptionsController');
     Route::resource('surveys', 'SurveysController');

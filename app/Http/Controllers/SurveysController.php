@@ -63,6 +63,14 @@ class SurveysController extends Controller
      *     summary="Guarda la encuesta",
      *     produces={"application/json"},
      *     tags={"SURVEY"},
+     *     @SWG\Parameter(
+     *         name="name",
+     *         description="Nombre de la encuesta",
+     *         required=true,
+     *         type="string",
+     *         format="string",
+     *         in="formData"
+     *     ),
      *     @SWG\Response(
      *         response=200,
      *         description="Encuesta guardada"
