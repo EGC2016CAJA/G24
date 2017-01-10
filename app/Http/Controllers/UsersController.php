@@ -11,6 +11,21 @@ class UsersController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *
+     * @SWG\Get(
+     *     path="/v1.0/users",
+     *     summary="Muestra el índice",
+     *     produces={"application/json"},
+     *     tags={"USER"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Muestra el índice"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
      */
     public function index()
     {
@@ -70,6 +85,34 @@ class UsersController extends Controller
         );
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Get(
+     *     path="/v1.0/votes/{id}",
+     *     summary="Muestra el voto",
+     *     produces={"application/json"},
+     *     tags={"VOTE"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Voto mostrado"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id",
+     *         description="Voto",
+     *         required=true,
+     *         type="integer",
+     *         format="int",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
+     */
     /**
      * Display the specified resource.
      *
