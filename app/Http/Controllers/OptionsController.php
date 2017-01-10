@@ -150,6 +150,34 @@ class OptionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Put(
+     *     path="/v1.0/options/{id}",
+     *     summary="Actualizar la opcion",
+     *     produces={"application/json"},
+     *     tags={"OPTION"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Opcion actualizada"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id",
+     *         description="Option",
+     *         required=true,
+     *         type="integer",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Acción no autorizada.",
+     *     ),
+     * )
+     */
     public function update(Request $request, $id)
     {
         //
