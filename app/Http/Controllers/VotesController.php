@@ -16,7 +16,7 @@ class VotesController extends ApiController
      * @SWG\Get(
      *     path="/v1.0/votes",
      *     summary="Muestra un listado de votos",
-     *     description="Muestra todos los votos guardados hasta el momento"
+     *     description="Muestra todos los votos guardados hasta el momento",
      *     produces={"application/json"},
      *     tags={"VOTE"},
      *     @SWG\Response(
@@ -59,7 +59,7 @@ class VotesController extends ApiController
      * @SWG\Post(
      *     path="/v1.0/votes",
      *     summary="Guarda el voto",
-     *     description="Crea un nuevo voto con los parametros deseados"
+     *     description="Crea un nuevo voto con los parametros deseados",
      *     produces={"application/json"},
      *     tags={"VOTE"},
      *     @SWG\Parameter(
@@ -109,7 +109,7 @@ class VotesController extends ApiController
      * @SWG\Get(
      *     path="/v1.0/votes/{id}",
      *     summary="Muestra el voto",
-     *     description="Muestra la información del voto con id={id}"
+     *     description="Muestra la información del voto con id={id}",
      *     produces={"application/json"},
      *     tags={"VOTE"},
      *     @SWG\Response(
@@ -173,7 +173,7 @@ class VotesController extends ApiController
      * @SWG\Put(
      *     path="/v1.0/votes/{id}",
      *     summary="Actualizar el voto",
-     *     description="Reemplaza la información del voto con id={id}"
+     *     description="Reemplaza la información del voto con id={id}",
      *     produces={"application/json"},
      *     tags={"VOTE"},
      *     @SWG\Response(
@@ -239,7 +239,7 @@ class VotesController extends ApiController
      * @SWG\Delete(
      *     path="/v1.0/votes/{id}",
      *     summary="Borrar el voto",
-     *     description="Borra el voto con id={id}"
+     *     description="Borra el voto con id={id}",
      *     produces={"application/json"},
      *     tags={"VOTE"},
      *     @SWG\Response(

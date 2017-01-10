@@ -15,7 +15,7 @@ class SurveysController extends Controller
      * @SWG\Get(
      *     path="/v1.0/surveys",
      *     summary="Muestra un listado con todas las encuestas",
-     *     description="Muestra todas las encuestas guardadas hasta el momento"
+     *     description="Muestra todas las encuestas guardadas hasta el momento",
      *     produces={"application/json"},
      *     tags={"SURVEY"},
      *     @SWG\Response(
@@ -62,7 +62,7 @@ class SurveysController extends Controller
      * @SWG\Post(
      *     path="/v1.0/surveys",
      *     summary="Guarda la encuesta",
-     *     description="Crea una nueva encuesta con los parametros deseados"
+     *     description="Crea una nueva encuesta con los parametros deseados",
      *     produces={"application/json"},
      *     tags={"SURVEY"},
      *     @SWG\Parameter(
@@ -109,7 +109,7 @@ class SurveysController extends Controller
      * @SWG\Get(
      *     path="/v1.0/surveys/{id}",
      *     summary="Muestra la encuesta",
-     *     description="Muestra la información de la encuesta con id={id}"
+     *     description="Muestra la información de la encuesta con id={id}",
      *     produces={"application/json"},
      *     tags={"SURVEY"},
      *     @SWG\Response(
@@ -187,7 +187,7 @@ class SurveysController extends Controller
      * @SWG\Put(
      *     path="/v1.0/surveys/{id}",
      *     summary="Actualizar la encuesta",
-     *     description="Reemplaza la información de la encuesta con id={id}"
+     *     description="Reemplaza la información de la encuesta con id={id}",
      *     produces={"application/json"},
      *     tags={"SURVEY"},
      *     @SWG\Response(
@@ -227,7 +227,7 @@ class SurveysController extends Controller
      * @SWG\Delete(
      *     path="/v1.0/survey/{id}",
      *     summary="Borrar la encuesta",
-     *     description="Borra la encuesta con id={id}"
+     *     description="Borra la encuesta con id={id}",
      *     produces={"application/json"},
      *     tags={"SURVEY"},
      *     @SWG\Response(
