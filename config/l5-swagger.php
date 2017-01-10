@@ -18,7 +18,7 @@ return [
         |--------------------------------------------------------------------------
         */
 
-        'auth_token' => env('L5_SWAGGER_API_AUTH_TOKEN', true),
+        'auth_token' => 'Bearer '.env('L5_SWAGGER_API_AUTH_TOKEN', true),
 
         /*
         |--------------------------------------------------------------------------
@@ -34,7 +34,7 @@ return [
         |--------------------------------------------------------------------------
         */
 
-        'security_definition' => env('L5_SWAGGER_API_SECURITY_DEFINITION', 'auth_token'),
+        'security_definition' => env('L5_SWAGGER_API_SECURITY_DEFINITION', 'oauth2'),
 
         /*
         |--------------------------------------------------------------------------
