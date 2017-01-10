@@ -15,7 +15,7 @@ class VotesController extends ApiController
      *
      * @SWG\Get(
      *     path="/v1.0/votes",
-     *     summary="Muestra el índice",
+     *     summary="Muestra un listado de votos",
      *     produces={"application/json"},
      *     tags={"VOTE"},
      *     @SWG\Response(

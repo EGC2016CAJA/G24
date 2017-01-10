@@ -14,7 +14,7 @@ class SurveysController extends Controller
      *
      * @SWG\Get(
      *     path="/v1.0/surveys",
-     *     summary="Muestra el índice",
+     *     summary="Muestra un listado con todas las encuestas",
      *     produces={"application/json"},
      *     tags={"SURVEY"},
      *     @SWG\Response(

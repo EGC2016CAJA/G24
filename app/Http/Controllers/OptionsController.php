@@ -19,7 +19,7 @@ class OptionsController extends Controller
      *
      * @SWG\Get(
      *     path="/v1.0/options",
-     *     summary="Muestra el índice",
+     *     summary="Muestra un listado de Opciones",
      *     produces={"application/json"},
      *     tags={"OPTION"},
      *     @SWG\Response(

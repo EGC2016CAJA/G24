@@ -14,7 +14,7 @@ class UsersController extends Controller
      *
      * @SWG\Get(
      *     path="/v1.0/users",
-     *     summary="Muestra el índice",
+     *     summary="Muestra un listado de usuarios",
      *     produces={"application/json"},
      *     tags={"USER"},
      *     @SWG\Response(
