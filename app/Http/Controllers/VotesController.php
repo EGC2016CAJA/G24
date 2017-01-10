@@ -162,7 +162,7 @@ class VotesController extends ApiController
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Vote",
+     *         description="Voto",
      *         required=true,
      *         type="integer",
      *         in="path"
@@ -211,7 +211,7 @@ class VotesController extends ApiController
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Vote",
+     *         description="Voto",
      *         required=true,
      *         type="integer",
      *         in="path"

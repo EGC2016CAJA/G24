@@ -153,17 +153,17 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      *
      * @SWG\Put(
-     *     path="/v1.0/votes/{id}",
-     *     summary="Actualizar el voto",
+     *     path="/v1.0/users/{id}",
+     *     summary="Actualizar el usuario",
      *     produces={"application/json"},
      *     tags={"VOTE"},
      *     @SWG\Response(
      *         response=200,
-     *         description="Voto actualizado"
+     *         description="Usuario actualizado"
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Vote",
+     *         description="Usuario",
      *         required=true,
      *         type="integer",
      *         in="path"
@@ -184,6 +184,34 @@ class UsersController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     */
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Delete(
+     *     path="/v1.0/votes/{id}",
+     *     summary="Borrar el voto",
+     *     produces={"application/json"},
+     *     tags={"VOTE"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Voto borrado"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id",
+     *         description="Voto",
+     *         required=true,
+     *         type="integer",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Acción no autorizada.",
+     *     ),
+     * )
      */
     public function destroy($id)
     {
