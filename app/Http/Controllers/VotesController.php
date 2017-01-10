@@ -169,7 +169,7 @@ class VotesController extends ApiController
      *     ),
      *     @SWG\Response(
      *         response=401,
-     *         description="Unauthorized action.",
+     *         description="Acción no autorizada.",
      *     ),
      * )
      */
@@ -218,7 +218,7 @@ class VotesController extends ApiController
      *     ),
      *     @SWG\Response(
      *         response=401,
-     *         description="Unauthorized action.",
+     *         description="Acción no autorizada.",
      *     ),
      * )
      */
