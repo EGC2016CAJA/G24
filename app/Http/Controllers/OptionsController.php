@@ -64,7 +64,7 @@ class OptionsController extends Controller
      *     tags={"OPTION"},
      *     @SWG\Response(
      *         response=200,
-     *         description="Opcion guardado"
+     *         description="Opcion guardada"
      *     ),
      *     @SWG\Response(
      *         response=401,
@@ -93,6 +93,34 @@ class OptionsController extends Controller
         );
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SWG\Get(
+     *     path="/v1.0/options/{id}",
+     *     summary="Muestra la opcion",
+     *     produces={"application/json"},
+     *     tags={"OPTION"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="Opcion mostrada"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="id",
+     *         description="Opcion",
+     *         required=true,
+     *         type="integer",
+     *         format="int",
+     *         in="path"
+     *     ),
+     *     @SWG\Response(
+     *         response=401,
+     *         description="Accion no autorizada",
+     *     ),
+     * )
+     */
     /**
      * Display the specified resource.
      *
