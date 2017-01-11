@@ -15,6 +15,7 @@ class UsersController extends Controller
      * @SWG\Get(
      *     path="/v1.0/users",
      *     summary="Muestra un listado de usuarios",
+     *     description="Muestra todas los usuarios guardados hasta el momento",
      *     produces={"application/json"},
      *     tags={"USER"},
      *     @SWG\Response(
@@ -53,8 +54,57 @@ class UsersController extends Controller
      * @SWG\Post(
      *     path="/v1.0/users",
      *     summary="Guarda el usuario",
+     *     description="Crea un nuevo usuario con los parametros deseados",
      *     produces={"application/json"},
      *     tags={"USER"},
+     *     @SWG\Parameter(
+     *         name="name",
+     *         description="Nombre del usuario",
+     *         required=true,
+     *         type="string",
+     *         format="string",
+     *         in="formData"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="email",
+     *         description="Email del usuario",
+     *         required=true,
+     *         type="string",
+     *         format="string",
+     *         in="formData"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="password",
+     *         description="Contraseña del usuario",
+     *         required=true,
+     *         type="string",
+     *         format="string",
+     *         in="formData"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="age",
+     *         description="Edad del usuario",
+     *         required=true,
+     *         type="integer",
+     *         format="int",
+     *         in="formData"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="gender",
+     *         description="Género del usuario",
+     *         required=true,
+     *         type="string",
+     *         format="string",
+     *         in="formData"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="state",
+     *         description="Estado del usuario",
+     *         required=true,
+     *         type="string",
+     *         format="string",
+     *         in="formData"
+     *     ),
      *     @SWG\Response(
      *         response=200,
      *         description="Usuario guardado"
@@ -93,6 +143,7 @@ class UsersController extends Controller
      * @SWG\Get(
      *     path="/v1.0/users/{id}",
      *     summary="Muestra el usuario",
+     *     description="Muestra la información del usuario con id={id}",
      *     produces={"application/json"},
      *     tags={"USER"},
      *     @SWG\Response(
@@ -101,7 +152,7 @@ class UsersController extends Controller
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Usuario",
+     *         description="Identificador de usuario",
      *         required=true,
      *         type="integer",
      *         format="int",
@@ -155,18 +206,67 @@ class UsersController extends Controller
      * @SWG\Put(
      *     path="/v1.0/users/{id}",
      *     summary="Actualizar el usuario",
+     *     description="Reemplaza la información del usuario con id={id}",
      *     produces={"application/json"},
-     *     tags={"VOTE"},
+     *     tags={"USER"},
      *     @SWG\Response(
      *         response=200,
      *         description="Usuario actualizado"
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="Usuario",
+     *         description="Identificador de usuario",
      *         required=true,
      *         type="integer",
      *         in="path"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="name",
+     *         description="Nombre del usuario",
+     *         required=true,
+     *         type="string",
+     *         format="string",
+     *         in="formData"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="email",
+     *         description="Email del usuario",
+     *         required=true,
+     *         type="string",
+     *         format="string",
+     *         in="formData"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="password",
+     *         description="Contraseña del usuario",
+     *         required=true,
+     *         type="string",
+     *         format="string",
+     *         in="formData"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="age",
+     *         description="Edad del usuario",
+     *         required=true,
+     *         type="integer",
+     *         format="int",
+     *         in="formData"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="gender",
+     *         description="Género del usuario",
+     *         required=true,
+     *         type="string",
+     *         format="string",
+     *         in="formData"
+     *     ),
+     *     @SWG\Parameter(
+     *         name="state",
+     *         description="Estado del usuario",
+     *         required=true,
+     *         type="string",
+     *         format="string",
+     *         in="formData"
      *     ),
      *     @SWG\Response(
      *         response=401,
@@ -203,6 +303,7 @@ class UsersController extends Controller
      * @SWG\Delete(
      *     path="/v1.0/users/{id}",
      *     summary="Borrar el usuario",
+     *     description="Borra el usuario con id={id}",
      *     produces={"application/json"},
      *     tags={"USER"},
      *     @SWG\Response(
@@ -211,7 +312,7 @@ class UsersController extends Controller
      *     ),
      *     @SWG\Parameter(
      *         name="id",
-     *         description="User",
+     *         description="Identificador de usuario",
      *         required=true,
      *         type="integer",
      *         in="path"
