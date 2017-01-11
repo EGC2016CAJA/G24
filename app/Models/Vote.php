@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Vote extends Model
 {
     protected $fillable = ['user_id', 'option_id'];
-    public $hidden = ['user_id'];
+    public $hidden = ['user_id', 'created_at'];
 
     public function user(){
 
