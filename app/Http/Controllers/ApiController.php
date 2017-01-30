@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
  *
  * @SWG\Swagger(
  *     basePath="",
- *     host="localhost/egc/public/api",
+ *     host="http://api-almacenamiento.jelastic.cloudhosted.es/public/api",
  *     schemes={"http"},
  *     @SWG\Info(
  *         version="1.0",
