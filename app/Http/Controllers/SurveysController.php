@@ -36,9 +36,8 @@ class SurveysController extends Controller
     public function index()
     {
         $results = Survey::with(array(
-            'options',
-            'options.votes',
-        ))->get();
+
+        ))->orderBy('created_at', 'DESC')->get();
         return response()->json(array(
             'error' => false,
             'data' => $results,
